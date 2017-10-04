@@ -1,3 +1,7 @@
+
+<?php
+	//	print_r($_POST);
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,18 +23,16 @@
 
       <div class="register-box-body">
         <p class="login-box-msg">Register a new Customer</p>
-        <form action="#" method="post">
+
+        <form action="http://people.aero.und.edu/~spokharel/cgi-bin/513/1/customer_signup.cgi" method="post">
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Full name">
+            <input type="text" class="form-control" name = "fullName"  placeholder="Full name" required>
           </div>
           <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="Email">
+            <input type="text" class="form-control" name = "userName"  placeholder="Username" required>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Password">
-          </div>
-          <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Retype password">
+            <input type="password" class="form-control" name = "password" placeholder="Password" required>
           </div>
           <div class="row">
             <div class="col-xs-1"></div><!-- /.col -->
