@@ -37,7 +37,7 @@
             </div><!-- /.col -->
           </div>
         </form><br>
-        <a href="index.php" class="text-center">Back to Login page</a>
+        <a href="http://people.aero.und.edu/~spokharel/513/1/" class="text-center">Back to Login page</a>
       </div><!-- /.form-box -->
     </div><!-- /.register-box -->
 

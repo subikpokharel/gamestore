@@ -33,7 +33,7 @@
             </div><!-- /.col -->
           </div>
         </form><br>
-	<a href="index.php">Back to Login</a>
+	<a href="http://people.aero.und.edu/~spokharel/513/1/">Back to Login</a>
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
