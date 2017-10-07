@@ -1,6 +1,6 @@
 
 <?php
-	//	print_r($_POST);
+		print_r($_POST);
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,7 @@
       <div class="register-box-body">
         <p class="login-box-msg">Register a new Customer</p>
 
-        <form action="http://people.aero.und.edu/~spokharel/cgi-bin/513/1/customer_signup.cgi" method="post">
+        <form action="http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Customer.cgi" method="post">
           <div class="form-group has-feedback">
             <input type="text" class="form-control" name = "fullName"  placeholder="Full name" required>
           </div>
