@@ -21,11 +21,7 @@
         <p class="login-box-msg">Register a new Developer</p>
         <form action="#" method="post">
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Full name">
-          </div>
-          <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="Email">
-          </div>
+            <input type="text" class="form-control" placeholder="Full name"></br>
           <div class="row">
             <div class="col-xs-1"></div><!-- /.col -->
             <div class="col-xs-5">

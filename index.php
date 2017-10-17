@@ -21,7 +21,7 @@
         <p class="login-box-msg">Sign in to start your session</p>
         <form action="#" method="post">
           <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="Email">
+            <input type="text" class="form-control" placeholder="Username">
           </div>
           <div class="form-group has-feedback">
             <input type="password" class="form-control" placeholder="Password">
