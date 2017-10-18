@@ -38,7 +38,7 @@
           <div class="form-group has-feedback">
             <input type="password" class="form-control" name = "password" placeholder="Password" required>
           </div>
-<input type="hidden" class="form-control" name = "action" value="register">
+	<input type="hidden" class="form-control" name = "action" value="customer_register">
           <div class="row">
             <div class="col-xs-1"></div><!-- /.col -->
             <div class="col-xs-5">
