@@ -27,8 +27,8 @@
       <div class="register-box-body">
         <p class="login-box-msg">Register a new Customer</p>
 
-        <form id="signupForm" method="post" >
-	<div id ="signupError" class="alert alert-danger" style="display:none">Signup Failed. Please Try again!!!</div>
+        <form id="signupForm" method="post"  >
+	<div id ="signupError" class="alert alert-danger" style="display:none">Signup Failed. Please select different UserName!!</div>
           <div class="form-group has-feedback">
             <input type="text" class="form-control" name = "fullName"  placeholder="Full name" required>
           </div>

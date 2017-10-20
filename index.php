@@ -1,6 +1,6 @@
 
 <?php
-	print_r($_POST);
+	//print_r($_POST);
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="public/bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="public/template.min.css">
+	<!-- Reference to Jquery script -->
+	<script scr ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 
   </head>
   <body class="hold-transition login-page">
@@ -33,8 +36,10 @@
 						<a href=""><b>Admin</b>Login</a>
 					</div><!-- /.login-logo -->
 					<p class="login-box-msg">Please enter your password</p>
-        				<form id="adminLogin" method="post" action = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Customer.cgi">
+        				<form id="Login" method="post" name="login_admin">
+						<div id ="adminError" class="alert alert-danger" style="display:none">Password Mismatch!!</div>
 						<div class="form-group has-feedback">
+							
             						<input type="hidden" class="form-control" name = "username" value="admin">
           					</div>
           					<div class="form-group has-feedback">
@@ -61,7 +66,8 @@
 						<a href=""><b>Customer</b>Login</a>
 					</div><!-- /.login-logo -->
         				<p class="login-box-msg">Sign in to start your session</p>
-        				<form id="customerLogin" method="post" action = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Customer.cgi">
+        				<form id="Login1" method="post" name="login_customer">
+						<div id ="customerError" class="alert alert-danger" style="display:none">Username or Password did not match!!</div>
 						<div class="form-group has-feedback">
             						<input type="text" class="form-control" name = "userName"  placeholder="Username" required>
           					</div>
@@ -91,7 +97,9 @@
         						<a href=""><b>Developer</b>Signup</a>
       						</div>
         					<p class="login-box-msg">Register a new Developer</p>
-        					<form id="developerSignup" method="post" action = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Customer.cgi" >
+        					<form id="developerSignup" method="post" name="dev_form" >
+						<div id ="developerError" class="alert alert-danger" style="display:none">Signup Failed. You name already exists in the database!!</div>
+						<div id ="developerSuccess" class="alert alert-success" style="display:none">Signup Success. Congratulation!!</div>
           					<div class="form-group has-feedback">
             						<input type="text" class="form-control" name = "fullName"  placeholder="Enter your Full name" required>
 						</div>
@@ -99,7 +107,7 @@
           					<div class="row">
             						<div class="col-xs-1"></div><!-- /.col -->
             						<div class="col-xs-5">
-              							<button type="signup" class="btn btn-primary btn-block btn-flat">SignUp</button>
+              							<button type="submit" class="btn btn-primary btn-block btn-flat" onclick="submitForm()" >SignUp</button>
             						</div><!-- /.col -->
             						<div class="col-xs-1"> </div><!-- /.col -->
            						<div class="col-xs-5">
@@ -114,7 +122,129 @@
 		</div>
 	</div>
 
+<script type="text/javascript">
 
+$("#developerSignup").submit(function(e) {
+    var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Customer.cgi";
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#developerSignup").serialize(), // serializes the form's elements.
+           success:function(data)
+           {    var arr = JSON.parse( data );
+		
+                if(arr[0].status=='success'){
+                        $('#developerSuccess').show(); 
+			$('#developerSuccess').fadeOut(5000);   
+			document.dev_form.reset();       
+                }else{
+                        $('#developerError').show();    
+			$('#developerError').fadeOut(5000);             
+                }
+           }
+		
+         });
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+});
+$("#Login").submit(function(e) {
+    var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Customer.cgi";
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#Login").serialize(), // serializes the form's elements.
+           success:function(data)
+           {    var arr = JSON.parse( data );
+		//alert(data);
+                if(arr[0].status=='success'){
+			 if(arr[0].person=='admin'){
+				location.href = 'admin.php'; 
+			}else{
+				location.href = 'dashboard.php'; 
+			}   
+                }else{
+			if(arr[0].person=='admin'){
+				$('#adminError').show();    
+				$('#adminError').fadeOut(5000);  
+				document.login_admin.reset();   
+			}else{
+				$('#customerError').show();    
+				$('#customerError').fadeOut(5000); 
+				document.login_customer.reset();       
+			}   
+                                 
+                }
+           }
+		
+         });
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+});
+
+
+$("#Login1").submit(function(e) {
+    var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Customer.cgi";
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#Login1").serialize(), // serializes the form's elements.
+           success:function(data)
+           {    var arr = JSON.parse( data );
+		//alert(data);
+                if(arr[0].status=='success'){
+			 if(arr[0].person=='admin'){
+				location.href = 'admin.php'; 
+			}else{
+				location.href = 'dashboard.php'; 
+			}   
+                }else{
+			if(arr[0].person=='admin'){
+				$('#adminError').show();    
+				$('#adminError').fadeOut(5000);  
+				document.login_admin.reset();   
+			}else{
+				$('#customerError').show();    
+				$('#customerError').fadeOut(5000); 
+				document.login_customer.reset();       
+			}   
+                                 
+                }
+           }
+		
+         });
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+});
+/*$("#Login").submit(function(e) {
+    var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Customer.cgi";
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#Login").serialize(), // serializes the form's elements.
+           success:function(data)
+           {    var arr = JSON.parse( data );
+		//alert(data);
+                if(arr[0].status=='success'){
+			 if(arr[0].person=='admin'){
+				location.href = 'admin.php'; 
+			}else{
+				location.href = 'dashboard.php'; 
+			}   
+                }else{
+			if(arr[0].person=='admin'){
+				$('#adminError').show();    
+				$('#adminError').fadeOut(5000);  
+				document.login_admin.reset();   
+			}else{
+				$('#customerError').show();    
+				$('#customerError').fadeOut(5000); 
+				document.login_customer.reset();       
+			}   
+                                 
+                }
+           }
+		
+         });
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+});*/
+</script> 
 
   </body>
 </html>
