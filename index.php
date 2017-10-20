@@ -1,6 +1,11 @@
 
 <?php
 	//print_r($_POST);
+	//if(isset($_
+	session_start();
+	if(isset($_SESSION['username'])){
+		header("Location: dashboard.php"); 
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -159,7 +164,7 @@ $("#Login").submit(function(e) {
 			 if(arr[0].person=='admin'){
 				location.href = 'admin.php'; 
 			}else{
-				location.href = 'dashboard.php'; 
+				location.href = 'loginService.php?userId=' + arr[0].userId + '&userName='+arr[0].userName; 
 			}   
                 }else{
 			if(arr[0].person=='admin'){
@@ -191,9 +196,9 @@ $("#Login1").submit(function(e) {
 		//alert(data);
                 if(arr[0].status=='success'){
 			 if(arr[0].person=='admin'){
-				location.href = 'admin.php'; 
+				location.href = 'admin.php';
 			}else{
-				location.href = 'dashboard.php'; 
+				location.href = 'loginService.php?userId=' + arr[0].userId + '&userName='+arr[0].userName; 
 			}   
                 }else{
 			if(arr[0].person=='admin'){
