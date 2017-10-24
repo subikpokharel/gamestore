@@ -34,9 +34,10 @@
 			</div>
 		</div><!-- /.login-box -->
 		<div class="row">
-			<div class="col-xs-1"></div><!-- /.col -->
-			<div class="col-xs-2">
-				<div class="login-box-body">
+			<div class="col-xs-0"></div><!-- /.col -->
+			<div class="col-xs-4">
+				<div class="register-box">
+				<div class="register-box-body">
 					<div class="login-logo">
 						<a href=""><b>Admin</b>Login</a>
 					</div><!-- /.login-logo -->
@@ -61,11 +62,11 @@
             						</div><!-- /.col -->
           					</div>
 					</form><br>
-
+				</div>
       				</div><!-- /.login-box-body Admin-->			
 			</div><!-- /.col -->
-			<div class="col-xs-1"></div><!-- /.col -->
-			<div class="col-xs-3">
+			<div class="col-xs-0"></div><!-- /.col -->
+			<div class="col-xs-4">
 				<div class="login-box-body">
 					<div class="login-logo">
 						<a href=""><b>Customer</b>Login</a>
@@ -94,8 +95,8 @@
 
       				</div><!-- /.login-box-body Customer -->
 			</div><!-- /.col -->
-			<div class="col-xs-1"></div><!-- /.col -->
-			<div class="col-xs-2">
+			<div class="col-xs-0"></div><!-- /.col -->
+			<div class="col-xs-4">
 				<div class="register-box">
       					<div class="register-box-body">
 						<div class="register-logo">
@@ -119,11 +120,11 @@
               							<button type="reset" class="btn btn-danger btn-block btn-flat">Reset</button>
             						</div><!-- /.col -->
           					</div>
-        					</form>
+        					</form><br/>
       					</div><!-- /.form-box -->
     				</div><!-- /.register-box Developer-->
 			</div><!-- /.col -->
-			<div class="col-xs-1"></div><!-- /.col -->
+			<div class="col-xs-0"></div><!-- /.col -->
 		</div>
 	</div>
 
@@ -151,6 +152,7 @@ $("#developerSignup").submit(function(e) {
          });
     e.preventDefault(); // avoid to execute the actual submit of the form.
 });
+
 $("#Login").submit(function(e) {
     var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Customer.cgi";
     $.ajax({
@@ -216,8 +218,8 @@ $("#Login1").submit(function(e) {
 		
          });
     e.preventDefault(); // avoid to execute the actual submit of the form.
-});
-/*$("#Login").submit(function(e) {
+});/*
+$("#Login").submit(function(e) {
     var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Customer.cgi";
     $.ajax({
            type: "POST",
