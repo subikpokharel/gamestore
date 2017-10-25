@@ -164,7 +164,7 @@ $("#Login").submit(function(e) {
 		//alert(data);
                 if(arr[0].status=='success'){
 			 if(arr[0].person=='admin'){
-				location.href = 'admin.php'; 
+				location.href = 'admin.php?userId=' + arr[0].userId + '&userName='+arr[0].userName; 
 			}else{
 				location.href = 'loginService.php?userId=' + arr[0].userId + '&userName='+arr[0].userName; 
 			}   
@@ -198,7 +198,7 @@ $("#Login1").submit(function(e) {
 		//alert(data);
                 if(arr[0].status=='success'){
 			 if(arr[0].person=='admin'){
-				location.href = 'admin.php';
+				location.href = 'admin.php?userId=' + arr[0].userId + '&userName='+arr[0].userName; 
 			}else{
 				location.href = 'loginService.php?userId=' + arr[0].userId + '&userName='+arr[0].userName; 
 			}   

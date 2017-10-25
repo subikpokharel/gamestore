@@ -1,0 +1,41 @@
+
+				<!-- checkbox -->
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox">
+                      Checkbox 1
+                    </label>
+                  </div>
+
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox">
+                      Checkbox 2
+                    </label>
+                  </div>
+
+          
+                </div>
+
+
+
+
+
+<script type="text/javascript">
+autoCall();
+function autoCall() {
+    var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/ListGame.cgi";
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#developerSignup").serialize(), // serializes the form's elements.
+           success:function(data)
+           {    
+		var arr = JSON.parse( data );		
+           }
+		
+         });
+};
+
+</script>
