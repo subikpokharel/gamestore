@@ -1,6 +1,6 @@
 <?php
 	require_once('admin_header.php');
-	//print_r($_POST);
+	print_r($_POST);
 	
 ?>
 <div class="row">
@@ -28,12 +28,13 @@
 				 <!-- Select multiple-->
 				<div class="form-group">
 					<label>Select Developers for the Game</label>
-					<select multiple class="form-control" name = "dev"  required>
-						<option>Developer 1</option>
-						<option>Developer 2</option>
-						<option>Developer 3</option>
-						<option>Developer 4</option>
-						<option>Developer 5</option>
+						<br/>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.
+					<select multiple class="form-control" name = "dev[ ]" required>
+						<option value="1">Developer 1</option>
+						<option value="2">Developer 2</option>
+						<option value="3">Developer 3</option>
+						<option value="4">Developer 4</option>
+						<option value="5">Developer 5</option>
 					</select>
                 		</div>
 			</div><!-- /.box-body -->
