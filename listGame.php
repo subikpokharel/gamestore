@@ -14,7 +14,6 @@
 	<div class="row">
 		<table class="table table-bordered table-hover dataTable pull-center" id ="game_table">
 
-		</table>
 	</div>
 </div>
 
@@ -26,8 +25,8 @@
    var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/List.cgi";
    xmlhttp.onreadystatechange = function( ) {
     if ( xmlhttp.readyState == 4 && xmlhttp.status == 200 ) {
-   // 	myFunction( xmlhttp.responseText );
-	alert(xmlhttp.responseText);
+    	myFunction( xmlhttp.responseText );
+//	alert(xmlhttp.responseText);
     }
    }
    xmlhttp.open( "GET", url, true );
@@ -49,6 +48,7 @@
 		"</td><td>" + arr[i].DeveloperName +
 		"</td></tr>";
     }
+	out += "</table>"
     document.getElementById( "game_table" ).innerHTML = out;
    }
   </script>

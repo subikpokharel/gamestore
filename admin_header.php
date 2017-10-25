@@ -55,7 +55,7 @@
 			<div class="row">
 				<div class="col-xs-1"></div>  
 				<div class="col-xs-2">   
-					 <a href="admin.php">
+					 <a href="listGame.php">
                 				</i> <span>List All Games</span>
 					</a>
 				</div> 
