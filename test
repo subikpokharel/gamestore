@@ -39,3 +39,37 @@ function autoCall() {
 };
 
 </script>
+
+
+
+
+# Compose a Java command.
+  my @brands = ( 'MKF Studios', 'Wolf', 'Parabuster Inc.', 'Big Studios' );
+  $cmd = "/usr/bin/java -Djava.security.egd=file:/dev/./urandom Check ";
+  foreach my $brand (@brands) {
+    if ( $query->param($brand) ) { $cmd .= "'" . $brand . "' "; }
+  }
+
+my @developers = $query->param( 'developers' );
+  foreach my $developer (@developers) { $developerIds .= $developer . ","; }
+$cmd   .= "'$developerIds' ";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>

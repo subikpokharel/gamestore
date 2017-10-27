@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="public/bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="public/template.min.css">
+
   <!-- Reference to Jquery script -->
     <script scr ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>

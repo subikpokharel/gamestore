@@ -37,8 +37,6 @@
 	function myFunction( response ) {
 		var arr = JSON.parse( response );
 		var i;
-		var check = "<input type=";
-		var inp="checkbox";
 		var out  = "<tr><th>Sl.No</th>" +
 			"<th>Developers Name</th>" +
 			"<th>Developers Id</th>" +
@@ -50,19 +48,13 @@
 			"</td><td align='left'>"+"<input type='checkbox' name='developerId[]' value='"+arr[i].Dev_ID +"'/"+">" + 
 			"</td></tr>";
 		}
-		//out += "</table>"
+		out += "</table>"
 		
 		document.getElementById( "developer_table" ).innerHTML = out;
 	}
-	
 
 </script>
 
 <?php
-	require_once('footer.php');/*
-$( ".check" ).append( "<p>Test</p>" );
-$('td').append($('<input/>',{'type':'checkbox'}));
-
-<td><a href="<?php echo base_url() ?>food/edit/<?php echo $fl->id ?>" class="btn btn-success" > Edit </a>   
-<a href="<?php echo base_url() ?>food/delete/<?php echo $fl->id?>" class="btn btn-danger" onclick="return confirm('are you sure to delete?')">Delete</a></td>*/
+	require_once('footer.php');
 ?>

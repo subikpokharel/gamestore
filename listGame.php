@@ -18,7 +18,7 @@
 </div>
 <script>
 	var xmlhttp = new XMLHttpRequest( );
-	var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/List.cgi";
+	var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/ListGame.cgi";
 	xmlhttp.onreadystatechange = function( ) {
 		if ( xmlhttp.readyState == 4 && xmlhttp.status == 200 ) {
 			myFunction( xmlhttp.responseText );
@@ -34,13 +34,16 @@
 			"<th>ASIN</th>" +
 			"<th>Title</th>" +
 			"<th>Price</th>" +
-			"<th>Developers Name</th></tr>";
+			"<th>Developer_ID</th>" +
+			"<th>Developers Name</th>" +
+			"<th>Action</th></tr>";
 		for ( i = 0; i < arr.length; i++ ) {
 			out += "<tr><td>" + (i+1) + 
-			"</td><td>"+ arr[i].Dev_ID +
-			"</td><td>" + arr[i].DeveloperName +
-			"</td><td>"+ arr[i].Dev_ID +
-			"</td><td>" + arr[i].DeveloperName +
+			"</td><td>"+ arr[i].ASIN +
+			"</td><td>" + "<a href ='test.php/"+arr[i].ASIN+"'><span>"+ arr[i].TITLE +"</span></a>" +
+			"</td><td>" + arr[i].Price +
+			"</td><td>"+ arr[i].Developer_ID +
+			"</td><td>" + arr[i].Developer_Name +
 			"</td></tr>";
 		}
 		out += "</table>"
@@ -51,4 +54,7 @@
 
 <?php
 	require_once('footer.php');
+	/*<a href="deleteDeveloper.php">
+                				<span>Delete Developer</span>
+					</a>*/
 ?>
