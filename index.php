@@ -126,6 +126,7 @@
 			</div><!-- /.col -->
 			<div class="col-xs-0"></div><!-- /.col -->
 		</div>
+		
 	</div>
 
 <script type="text/javascript">

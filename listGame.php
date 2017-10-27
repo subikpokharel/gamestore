@@ -40,10 +40,11 @@
 		for ( i = 0; i < arr.length; i++ ) {
 			out += "<tr><td>" + (i+1) + 
 			"</td><td>"+ arr[i].ASIN +
-			"</td><td>" + "<a href ='test.php/"+arr[i].ASIN+"'><span>"+ arr[i].TITLE +"</span></a>" +
+			"</td><td>" + "<a href ='test.php/"+arr[i].ASIN+"/?action=view'><span>"+ arr[i].TITLE +"</span></a>" +
 			"</td><td>" + arr[i].Price +
 			"</td><td>"+ arr[i].Developer_ID +
 			"</td><td>" + arr[i].Developer_Name +
+			"</td><td>" + "<a href='test.php/"+arr[i].ASIN+"/?action=add' class='btn btn-primary'>Add Developers</a>"+ 
 			"</td></tr>";
 		}
 		out += "</table>"
@@ -54,7 +55,5 @@
 
 <?php
 	require_once('footer.php');
-	/*<a href="deleteDeveloper.php">
-                				<span>Delete Developer</span>
-					</a>*/
+	/*<a href="<?php echo base_url() ?>food/add/<?php echo $fl->id?>" class="btn btn-default">Add Food</a></td></td>*/
 ?>

@@ -12,7 +12,7 @@
               <h2 class="box-title pull-left">Developer Delete</h2>
 </div>
 <br/>
-<form method="post" action="">
+<form method="post" action="http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Add.cgi">
 	
 <div id="box-body">
 	<div class="row">
@@ -20,6 +20,7 @@
 		</table>
 	</div>
 </div>
+<input type="hidden" class="form-control" name = "action" value="delete_developers">
 <button type="submit" class="btn btn-danger btn-block btn-flat">Delete Selected Developers</button>
 </form>
 <script>
