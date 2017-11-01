@@ -3,7 +3,7 @@
 	//print_r($_POST);
 	//if(isset($_
 	session_start();
-	if(isset($_SESSION['username'])){
+	if(isset($_SESSION['cus_username'])){
 		header("Location: dashboard.php"); 
 	}
 ?>

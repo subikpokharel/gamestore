@@ -1,7 +1,6 @@
 <?php	
 	require_once('admin_header.php');
-	print_r($_POST);
-	//http://people.aero.und.edu/~spokharel/cgi-bin/513/1/DeleteDeveloper.cgi
+	//action="http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Add.cgi"
 ?>
 
 
@@ -12,18 +11,23 @@
               <h2 class="box-title pull-left">Developer Delete</h2>
 </div>
 <br/>
-<form method="post" action="http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Add.cgi">
-	
-<div id="box-body">
+<form method="post" id="deleteDeveloperForm" name="developer_delete">
+	<div id ="deleteError" class="alert alert-danger" style="display:none">Developer could not be Deleted!!</div>
+	<div id ="deleteSuccess" class="alert alert-success" style="display:none">Developer Successfully Deleted. Congratulation!!</div>
 	<div class="row">
-		<table class="table table-bordered table-hover dataTable pull-center" id ="developer_table">
-		</table>
+		<div class="col-sm-3 pull-right">
+		<button type="submit" class="btn btn-danger btn-block btn-flat">Delete Selected Developers</button>
+		</div>
 	</div>
-</div>
-<input type="hidden" class="form-control" name = "action" value="delete_developers">
-<button type="submit" class="btn btn-danger btn-block btn-flat">Delete Selected Developers</button>
+	<div id="box-body">
+		<div class="row">
+			<table class="table table-bordered table-hover dataTable pull-center" id ="developer_table">
+			</table>
+		</div>
+	</div>
+	<input type="hidden" class="form-control" name = "action" value="delete_developers">
 </form>
-<script>
+<script type="text/javascript">
 
 	var xmlhttp = new XMLHttpRequest( );
 	var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/List.cgi";
@@ -53,6 +57,30 @@
 		
 		document.getElementById( "developer_table" ).innerHTML = out;
 	}
+
+	$("#deleteDeveloperForm").submit(function(e) {
+		var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Add.cgi";
+		window.location.reload();
+		$.ajax({
+			type: "POST",
+		        url: url,
+	           	data: $("#deleteDeveloperForm").serialize(), // serializes the form's elements.
+	           	success:function(data)
+	           	{    
+				var arr = JSON.parse( data );		
+	                	if(arr[0].status=='success'){
+                        		$('#deleteSuccess').show();
+					$('#deleteSuccess').fadeOut(5000); 
+					document.developer_delete.reset();       
+                		}else{
+                        		$('#deleteError').show();  
+					$('#deleteError').fadeOut(5000);  
+					document.developer_delete.reset();          
+                		}
+           		}
+		});
+		e.preventDefault(); // avoid to execute the actual submit of the form.
+	});
 
 </script>
 

@@ -34,7 +34,6 @@
 			"<th>ASIN</th>" +
 			"<th>Title</th>" +
 			"<th>Price</th>" +
-			"<th>Developer_ID</th>" +
 			"<th>Developers Name</th>" +
 			"<th>Action</th></tr>";
 		for ( i = 0; i < arr.length; i++ ) {
@@ -42,8 +41,7 @@
 			"</td><td>"+ arr[i].ASIN +
 			"</td><td>" + "<a href ='test.php/"+arr[i].ASIN+"/?action=view'><span>"+ arr[i].TITLE +"</span></a>" +
 			"</td><td>" + arr[i].Price +
-			"</td><td>"+ arr[i].Developer_ID +
-			"</td><td>" + arr[i].Developer_Name +
+			"</td><td>" + "<a href ='test.php/"+arr[i].Developer_ID+"/?action=view_developer'><span>"+ arr[i].Developer_Name +"</span></a>" +
 			"</td><td>" + "<a href='test.php/"+arr[i].ASIN+"/?action=add' class='btn btn-primary'>Add Developers</a>"+ 
 			"</td></tr>";
 		}
