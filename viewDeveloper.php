@@ -43,6 +43,15 @@
 		var arr = JSON.parse( response );
 		document.getElementById('name-id').innerHTML =arr[0].ID;
 		document.getElementById('name-name').innerHTML=arr[0].Name;
+		var el = arr[0].Games;
+		var out = "";
+		//alert(el.length);
+		//alert(el[0].GameAsin);
+		//alert(el[0].GameName);
+		for ( i = 0; i < el.length; i++ ) {
+			out += "Game "+(i+1)+": <a href ='viewGame.php?asin="+el[i].GameAsin+"&action=viewGame'><span><strong>"+ el[i].GameName +"</strong></span></a><br>" +"";
+		}
+		document.getElementById('name-game').innerHTML=out;
 
 	}
 

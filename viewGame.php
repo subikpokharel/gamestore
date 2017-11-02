@@ -60,10 +60,9 @@
 		//alert(el[0].Developer_ID);
 		//alert(el[0].Developer_Name);
 		for ( i = 0; i < el.length; i++ ) {
-			out += "Developer "+(i+1)+": <a href ='test.php?id="+el[i].Developer_ID+"&action=viewDeveloper'><span><strong>"+ el[i].Developer_Name +"</strong></span></a><br>" +"";
+			out += "Developer "+(i+1)+": <a href ='viewDeveloper.php?id="+el[i].Developer_ID+"&action=viewDeveloper'><span><strong>"+ el[i].Developer_Name +"</strong></span></a><br>" +"";
 		}
 		document.getElementById('name-developer').innerHTML=out;
-
 
 	}
 
