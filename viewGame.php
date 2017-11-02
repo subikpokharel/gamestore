@@ -4,39 +4,33 @@
 ?>
 
 <br/>
-<div class="box-header">
-              <h2 class="box-title">Game Details</h2>
+<div class="box-header with-border">
+              <h2 class="box-title"><strong>Game Details</strong></h2>
 </div>
 <br/>
 <div id="box-body">
 	<div class="row">
 		<div class="col-sm-1"></div>
 		<div class="col-sm-8">
-			   
-			   <form class="form-horizontal" method="post">
+			<form class="form-horizontal" method="post">
 				<input type="hidden" id="ASIN"  value="<?php echo($_GET['asin']); ?>">
 				<input type="hidden" id="ACTION" value="<?php echo($_GET['action']); ?>">
-				<div class="form-group">
-				    <label for="ISBN">ASIN </label>
-				   <div id="name-asin"></div>
-			 	 </div>
-			 	  <div class="form-group">
-				    <label for="title">Title</label>
-				    <div id="name-title"></div>
-			 	 </div>
-			 	 <div class="form-group">
-				    <label for="price">Price</label>
-				    <div id="name-price"></div>
-			 	 </div>
-				<div class="form-group">
-				    <label for="developers">Developers</label>
-				    <div id="name-developer"></div>		   
-			 	 </div>
-				<input type="hidden" name="action" value="addDeveloper">
+				<div class="form-group"> <label>ASIN </label>
+					<div id="name-asin"></div>
+			 	</div>
+			 	<div class="form-group"><label>Title</label>
+				 	<div id="name-title"></div>
+			 	</div>
+			 	<div class="form-group"><label>Price</label>
+					<div id="name-price"></div>
+			 	</div>
+				<div class="form-group"><label>Developers</label>
+					<div id="name-developer"></div>		   
+			 	</div>
+				
 				<br><br><br>
 			 	</form> 
 		    </div>
-			    </form>
 		<div class="col-sm-3"></div>
 
 	</div>
@@ -51,7 +45,7 @@
 	xmlhttp.onreadystatechange = function( ) {
 		if ( xmlhttp.readyState == 4 && xmlhttp.status == 200 ) {
 			myFunction( xmlhttp.responseText );
-			alert(xmlhttp.responseText);
+			//alert(xmlhttp.responseText);
 		}
 	}
 	xmlhttp.open( "GET", url, true );
@@ -61,19 +55,16 @@
 		document.getElementById('name-asin').innerHTML =arr[0].ASIN;
 		document.getElementById('name-title').innerHTML=arr[0].TITLE;
 		document.getElementById('name-price').innerHTML=arr[0].Price;
-		/*var i,x="";
-		
-		for (i in arr[0].Developer_Name) {
-			if(arr[0].Developer_Name[i] == ",")
-    				x += "<br>";
-    			else
-    				x += arr[0].Developer_Name[i] ;
+		var el = arr[0].Developers;
+		var out = "";
+		//var dev = JSON.parse( el );
+		//alert(el.length);
+		//alert(el[0].Developer_ID);
+		//alert(el[0].Developer_Name);
+		for ( i = 0; i < el.length; i++ ) {
+			out += "Developer "+(i+1)+": <a href ='test.php?id="+el[i].Developer_ID+"&action=viewDeveloper'><span><strong>"+ el[i].Developer_Name +"</strong></span></a><br>" +"";
 		}
-		
-		
-		document.getElementById('name-developer').innerHTML=x;*/
-
-		document.getElementById('name-developer').innerHTML=arr[0].Developer_Name;
+		document.getElementById('name-developer').innerHTML=out;
 
 
 	}
@@ -81,7 +72,7 @@
 </script>
 <?php
 	require_once('footer.php');
-	//"<a href ='viewGame.php?asin="+arr[i].ASIN+"&action=viewGame'><span>"+ arr[i].TITLE +"</span></a>" +
+	//<input type="hidden" name="action" value="addDeveloper">
 ?>
 
 

@@ -30,7 +30,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-3"style="font-size:25px; margin-top:10px;">    			
-				<a href="" class="logo">
+				<a href="http://people.aero.und.edu/~spokharel/513/1/listGame.php" class="logo">
       					<span class="logo-lg"><b>Gamestore </b> Admin</span>
     				</a>
 			</div>
@@ -38,7 +38,7 @@
 				<nav class="navbar navbar-static-top pull-right">
 					<ul class="nav navbar-nav">
 						<li class="dropdown user user-menu">
-							<a href="">
+							<a href="http://people.aero.und.edu/~spokharel/513/1/listGame.php">
 								<span class="hidden-xs">Welcome  <?php  echo ucfirst($user);?></span>
 							</a>
 						</li>
@@ -65,17 +65,17 @@
                 				<span>Enter games</span>
 					</a>
 				</div>
-				
-				<div class="col-xs-2">   
-					<a href="deleteDeveloper.php">
-                				<span>Delete Developer</span>
-					</a>
-				</div>
 				<div class="col-xs-2">   
 					<a href="updatePrice.php">
                 				<span class="menu">Update Game Price</span> 
 					</a>
 				</div>
+				<div class="col-xs-2">   
+					<a href="deleteDeveloper.php">
+                				<span>Delete Developer</span>
+					</a>
+				</div>
+				
 				<div class="col-xs-3">   
 					<a href="addDeveloper.php">
                 				<span>Add Developer to a game</span>

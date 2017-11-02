@@ -1,7 +1,5 @@
 <?php
 	require_once('admin_header.php');
-	//action="http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Add.cgi"
-	//print_r($_POST);
 	
 ?>
 
@@ -9,7 +7,7 @@
 	<!-- general form elements -->
 	<div class="box box-primary">
 		<div class="box-header with-border">
-			<h3 class="box-title">Enter Games</h3>
+			<h3 class="box-title"><strong>Enter Games</strong></h3>
 		</div><!-- /.box-header -->
 		<!-- form start -->
 		<form role="form" method="post" id="insertGameForm" name="game_insert">

@@ -4,8 +4,8 @@
 ?>
 
 <br/><br/>
-<div class="box-header">
-              <h2 class="box-title">List of Games Table</h2>
+<div class="box-header with-border">
+              <h2 class="box-title"><strong>List of Games Table</strong></h2>
 </div>
 <div id ="updateError" class="alert alert-danger" style="display:none">Sorry Price Could not be Updated!!</div>
 <div id ="updateSuccess" class="alert alert-danger" style="display:none">Price Successfully Updated!!</div>
@@ -47,13 +47,14 @@
 		for ( i = 0; i < arr.length; i++ ) {
 			out += "<tr><td>" + (i+1) + 
 			"</td><td>"+ arr[i].ASIN +
-			"</td><td>" + "<a href ='test.php/"+arr[i].ASIN+"/?action=view'><span>"+ arr[i].TITLE +"</span></a>" +
+			"</td><td>" + "<a href ='viewGame.php?asin="+arr[i].ASIN+"&action=viewGame'><span><strong>"+ arr[i].TITLE +"</strong></span></a>" +
 			"</td><td>" +"<input type=number min='0.00'step='0.01' name='prices[]' value="+arr[i].Price+">" +"<input type=hidden name='asins[]' value="+arr[i].ASIN+">" +
 			"</td></tr>";
 		}
 		out += "</table>"
 		document.getElementById( "update_table" ).innerHTML = out;
 	}
+
 
 
 	$("#updatePriceForm").submit(function(e) {

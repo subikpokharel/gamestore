@@ -6,8 +6,8 @@
 
 <br/><br/><br/>
 <!-- This is game list page.-->
-<div class="box-header">
-              <h2 class="box-title">List of Games Table</h2>
+<div class="box-header with-border">
+              <h2 class="box-title"><strong>List of Games Table</strong></h2>
 </div>
 <br/>
 <div id="box-body">
@@ -29,7 +29,7 @@
 	xmlhttp.send( );
 	function myFunction( response ) {
 		var arr = JSON.parse( response );
-		var i;
+		var i,j;
 		var out  = "<tr><th>Sl.No</th>" +
 			"<th>ASIN</th>" +
 			"<th>Title</th>" +
@@ -39,10 +39,16 @@
 		for ( i = 0; i < arr.length; i++ ) {
 			out += "<tr><td>" + (i+1) + 
 			"</td><td>"+ arr[i].ASIN +
-			"</td><td>" + "<a href ='viewGame.php?asin="+arr[i].ASIN+"&action=viewGame'><span>"+ arr[i].TITLE +"</span></a>" +
-			"</td><td>" + arr[i].Price +
-			"</td><td>" + "<a href ='test.php/"+arr[i].Developer_ID+"/?action=view_developer'><span>"+ arr[i].Developer_Name +"</span></a>" +
-			"</td><td>" + "<a href='test.php/"+arr[i].ASIN+"/?action=add' class='btn btn-primary'>Add Developers</a>"+ 
+			"</td><td>" + "<a href ='viewGame.php?asin="+arr[i].ASIN+"&action=viewGame'><span><strong>"+ arr[i].TITLE +"</strong></span></a>" +
+			"</td><td>" + arr[i].Price +"</td><td>";
+			
+			var el = arr[i].Developers;
+			var tmp = "";
+			for ( j = 0; j < el.length; j++ ) {
+				tmp += "Dev "+(j+1)+": <a href ='viewDeveloper.php?id="+el[j].Developer_ID+"&action=viewDeveloper'><span><strong>"+ el[j].Developer_Name +"</strong></span></a><br>" +"";
+			}
+			out += tmp;
+			out += "</td><td>" + "<a href='test.php/?asin="+arr[i].ASIN+"&action=addDeveloper' class='btn btn-primary'>Add Developers</a>"+ 
 			"</td></tr>";
 		}
 		out += "</table>"
@@ -53,4 +59,5 @@
 
 <?php
 	require_once('footer.php');
+	//"</td><td>" + "<a href ='test.php/"+arr[i].Developer_ID+"/?action=view_developer'><span>"+ arr[i].Developer_Name +"</span></a>" +
 ?>

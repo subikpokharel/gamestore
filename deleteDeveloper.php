@@ -1,14 +1,13 @@
 <?php	
 	require_once('admin_header.php');
-	//action="http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Add.cgi"
 ?>
 
 
 
 <br/>
 <!-- This is game list page.-->
-<div class="box-header">
-              <h2 class="box-title pull-left">Developer Delete</h2>
+<div class="box-header with-border">
+              <h2 class="box-title pull-left"><strong>Developer Delete</strong></h2>
 </div>
 <br/>
 <form method="post" id="deleteDeveloperForm" name="developer_delete">
