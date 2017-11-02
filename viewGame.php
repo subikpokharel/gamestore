@@ -27,9 +27,7 @@
 				<div class="form-group"><label>Developers</label>
 					<div id="name-developer"></div>		   
 			 	</div>
-				
-				<br><br><br>
-			 	</form> 
+			 </form> 
 		    </div>
 		<div class="col-sm-3"></div>
 

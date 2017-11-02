@@ -7,10 +7,11 @@
 <div class="box-header with-border">
               <h2 class="box-title"><strong>List of Games Table</strong></h2>
 </div>
-<div id ="updateError" class="alert alert-danger" style="display:none">Sorry Price Could not be Updated!!</div>
-<div id ="updateSuccess" class="alert alert-danger" style="display:none">Price Successfully Updated!!</div>
+
 <br/>
 <form method="post" id="updatePriceForm" name="update_price">
+	<div id ="updateError" class="alert alert-danger" style="display:none">Sorry Price Could not be Updated!!</div>
+	<div id ="updateSuccess" class="alert alert-danger" style="display:none">Price Successfully Updated!!</div>
 	<input type="hidden" class="form-control" name = "action" value="update_price">
 	
 	<div class="row">
@@ -68,9 +69,11 @@
 	           	{    
 				var arr = JSON.parse( data );		
 	                	if(arr[0].status=='success'){
+					alert(arr[0].status);
 					location.href = 'http://people.aero.und.edu/~spokharel/513/1/listGame.php';    
                         		     
                 		}else{
+					alert(arr[0].status);
                         		$('#updateError').show();  
 					$('#updateError').fadeOut(5000);  
 					document.update_price.reset();          
