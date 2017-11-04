@@ -42,18 +42,18 @@
 		var arr = JSON.parse( response );
 		var i;
 		var out  = "<tr><th>Sl.No</th>" +
-			"<th>Developers Name</th>" +
 			"<th>Developers Id</th>" +
+			"<th>Developers Name</th>" +
 			"<th>Select to Delete Developers</th></tr>";
 		for ( i = 0; i < arr.length; i++ ) {
 			out += "<tr><td>" + (i+1) + 
-			"</td><td>" + arr[i].DeveloperName +
 			"</td><td>" + arr[i].Dev_ID +
+			"</td><td>" +"<a href ='viewDeveloper.php?id="+ arr[i].Dev_ID +"&action=viewDeveloper'><span><strong>"+ arr[i].DeveloperName +"</strong></span></a>"+
 			"</td><td align='left'>"+"<input type='checkbox' name='developerId[]' value='"+arr[i].Dev_ID +"'/"+">" + 
 			"</td></tr>";
 		}
 		out += "</table>"
-		
+		//<a href ='viewDeveloper.php?id="+el[i].Developer_ID+"&action=viewDeveloper'><span><strong>"+ el[i].Developer_Name +"</strong></span></a><br>
 		document.getElementById( "developer_table" ).innerHTML = out;
 	}
 

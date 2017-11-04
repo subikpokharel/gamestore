@@ -48,7 +48,7 @@
 				tmp += "Dev "+(j+1)+": <a href ='viewDeveloper.php?id="+el[j].Developer_ID+"&action=viewDeveloper'><span><strong>"+ el[j].Developer_Name +"</strong></span></a><br>" +"";
 			}
 			out += tmp;
-			out += "</td><td>" + "<a href='test.php/?asin="+arr[i].ASIN+"&action=addDeveloper' class='btn btn-primary'>Add Developers</a>"+ 
+			out += "</td><td>" + "<a href='addDeveloper.php?asin="+arr[i].ASIN+"&action=addDeveloper' class='btn btn-primary'>Add Developers</a>"+ 
 			"</td></tr>";
 		}
 		out += "</table>"

@@ -55,17 +55,17 @@
 		<div class="row "style="font-size:18px;">
 			<div class="row">
 				<div class="col-xs-1"></div>  
-				<div class="col-xs-2">   
+				<div class="col-xs-3">   
 					 <a href="listGame.php">
                 				</i> <span>List All Games</span>
 					</a>
 				</div> 
-				<div class="col-xs-2">   
+				<div class="col-xs-3">   
 					 <a href="enterGame.php">
                 				<span>Enter games</span>
 					</a>
 				</div>
-				<div class="col-xs-2">   
+				<div class="col-xs-3">   
 					<a href="updatePrice.php">
                 				<span class="menu">Update Game Price</span> 
 					</a>
@@ -76,11 +76,7 @@
 					</a>
 				</div>
 				
-				<div class="col-xs-3">   
-					<a href="addDeveloper.php">
-                				<span>Add Developer to a game</span>
-					</a>
-				</div>
+				
 			</div>
 	  
 		</div>
