@@ -12,7 +12,7 @@
 	<div class="row">
 		<div class="col-sm-1"></div>
 		<div class="col-sm-8">
-			<form class="form-horizontal" method="post">
+			<form class="form-horizontal" method="get" action="http://people.aero.und.edu/~spokharel/513/1/addDeveloper.php">
 				<input type="hidden" id="ASIN"  value="<?php echo($_GET['asin']); ?>">
 				<input type="hidden" id="ACTION" value="<?php echo($_GET['action']); ?>">
 				<div class="form-group"> <label>ASIN </label>
@@ -27,6 +27,13 @@
 				<div class="form-group"><label>Developers</label>
 					<div id="name-developer"></div>		   
 			 	</div>
+				<input type="hidden" class="form-control" name = "asin" value="<?php echo($_GET['asin']); ?>">
+				<input type="hidden" class="form-control" name = "action" value="addDeveloper">
+				<div class="box-footer pull-right with-border">
+					<button type="submit" class="btn btn-primary">Add New Developer to Game</button>
+				</div>
+
+			
 			 </form> 
 		    </div>
 		<div class="col-sm-3"></div>
@@ -35,7 +42,7 @@
 </div>
 
 <script>
-	
+	//<a href='addDeveloper.php?asin="+arr[i].ASIN+"&action=addDeveloper' class='btn btn-primary'>Add Developers</a>"
 	var ASIN = document.getElementById('ASIN').value;
 	var action = document.getElementById('ACTION').value;
 	var xmlhttp = new XMLHttpRequest( );

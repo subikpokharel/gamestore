@@ -1,5 +1,6 @@
 <?php	
 	require_once('admin_header.php');
+	//action="http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Add.cgi"
 ?>
 
 
@@ -10,7 +11,7 @@
               <h2 class="box-title pull-left"><strong>Developer Delete</strong></h2>
 </div>
 <br/>
-<form method="post" id="deleteDeveloperForm" name="developer_delete">
+<form method="post" id="deleteDeveloperForm" name="developer_delete" >
 	<div id ="deleteError" class="alert alert-danger" style="display:none">Developer could not be Deleted!!</div>
 	<div id ="deleteSuccess" class="alert alert-success" style="display:none">Developer Successfully Deleted. Congratulation!!</div>
 	<div class="row">
@@ -59,18 +60,20 @@
 
 	$("#deleteDeveloperForm").submit(function(e) {
 		var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Add.cgi";
-		window.location.reload();
+		//window.location.reload();
 		$.ajax({
 			type: "POST",
 		        url: url,
 	           	data: $("#deleteDeveloperForm").serialize(), // serializes the form's elements.
 	           	success:function(data)
 	           	{    
-				var arr = JSON.parse( data );		
+				var arr = JSON.parse( data );
+				//alert(arr[0]);		
 	                	if(arr[0].status=='success'){
                         		$('#deleteSuccess').show();
 					$('#deleteSuccess').fadeOut(5000); 
-					document.developer_delete.reset();       
+					document.developer_delete.reset();  
+					setTimeout(location.reload.bind(location), 1000);     
                 		}else{
                         		$('#deleteError').show();  
 					$('#deleteError').fadeOut(5000);  

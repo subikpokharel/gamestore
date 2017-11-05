@@ -60,16 +60,18 @@
 
 	$("#updatePriceForm").submit(function(e) {
 		var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Add.cgi";
-		window.location.reload();
+		//window.location.reload();
 		$.ajax({
 			type: "POST",
 		        url: url,
 	           	data: $("#updatePriceForm").serialize(), // serializes the form's elements.
 	           	success:function(data)
 	           	{    
-				var arr = JSON.parse( data );		
+				
+				var arr = JSON.parse( data );	
+				//alert(arr[0].status);	
 	                	if(arr[0].status=='success'){
-					alert(arr[0].status);
+					//alert(arr[0].status);
 					location.href = 'http://people.aero.und.edu/~spokharel/513/1/listGame.php';    
                         		     
                 		}else{
