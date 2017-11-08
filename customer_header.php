@@ -31,16 +31,21 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-3"style="font-size:25px; margin-top:10px;">    			
-				<a href="http://people.aero.und.edu/~spokharel/513/1/listGame.php" class="logo">
+				<a href="http://people.aero.und.edu/~spokharel/513/1/dashboard.php" class="logo">
       					<span class="logo-lg"><b>Gamestore </b> Customer</span>
     				</a>
 			</div>
-			<div class="col-sm-3 pull-right">
+			<div class="col-sm-5 pull-right">
 				<nav class="navbar navbar-static-top pull-right">
 					<ul class="nav navbar-nav">
 						<li class="dropdown user user-menu">
-							<a href="http://people.aero.und.edu/~spokharel/513/1/listGame.php">
+							<a href="http://people.aero.und.edu/~spokharel/513/1/dashboard.php">
 								<span class="hidden-xs ">Welcome  <?php  echo ucfirst($user);?></span>
+							</a>
+						</li>
+						<li class="dropdown user user-menu">
+							<a href="http://people.aero.und.edu/~spokharel/513/1/viewOrders.php">
+								<span class="hidden-xs ">View Previous Orders</span>
 							</a>
 						</li>
 						<li class="dropdown user user-menu">

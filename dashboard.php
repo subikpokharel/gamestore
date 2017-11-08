@@ -11,9 +11,11 @@
 </div>
 <br/>
 <div id="box-body">
-	<form method="post" id="purchaseGameForm" name="purchase_game" action="http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Customer.cgi">
+	<form method="post" id="purchaseGameForm" name="purchase_game">
 		<input type="hidden" class="form-control" name = "action" value="purchase_game">
 		<input type="hidden" class="form-control" name = "userid" value="<?php  echo ucfirst($userId);?>">
+		<div id ="purchaseError" class="alert alert-danger" style="display:none">Sorry we could not process your Purchase !!</div>
+		<div id ="purchaseSuccess" class="alert alert-success" style="display:none">Your Purchase Was Successful. Congratulation!!</div>
 		<div class="row">
 			<table class="table table-bordered table-hover dataTable pull-center" id ="game_table">
 
@@ -41,22 +43,15 @@
 		var i,j;
 		var out  = "<tr><th>Sl.No</th>" +
 			"<th>Title</th>" +
-			"<th>Developers Name</th>" +
 			"<th>Price</th>" +
 			"<th>Purchase Game</th>" +
 			"<th>Quantity</th></tr>";
 		for ( i = 0; i < arr.length; i++ ) {
 			out += "<tr><td>" + (i+1) + 
-			"</td><td>" + "<a href ='viewGame.php?asin="+arr[i].ASIN+"&action=viewGame'><span><strong>"+ arr[i].TITLE +"</strong></span></a>"+"</td><td>";
-			var el = arr[i].Developers;
-			var tmp = "";
-			for ( j = 0; j < el.length; j++ ) {
-				tmp += "Developer "+(j+1)+": <a href ='viewDeveloper.php?id="+el[j].Developer_ID+"&action=viewDeveloper'><span><strong>"+ el[j].Developer_Name +"</strong></span></a><br>" +"";
-			}
-			out += tmp;
-			out += "</td><td>" + arr[i].Price ;
-			out += "</td><td>" + "<input type='checkbox' class='checkbox' name='purchaseAsin[]' value='"+arr[i].ASIN +"'/"+">" ;
-			out += "</td><td>" + "<input type=number min='0.00' class='field' name='quantity[]' value='0'"+ 
+			"</td><td>" + "<a href ='test.php?asin="+arr[i].ASIN+"&action=viewGame'><span><strong>"+ arr[i].TITLE +"</strong></span></a>"+
+			"</td><td>" + arr[i].Price +
+			"</td><td>" + "<input type='checkbox' class='checkbox' name='purchaseAsin[]' value='"+arr[i].ASIN +"'/"+">" +
+			"</td><td>" + "<input type=number min='0.00' class='field' name='quantity[]' value='0'/"+">"+ 
 			"</td></tr>";
 		}
 		out += "</table>"
@@ -64,6 +59,32 @@
 	}
 </script>
 
+<script type="text/javascript">
+$("#purchaseGameForm").submit(function(e) {
+		var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Customer.cgi";
+		$.ajax({
+			type: "POST",
+		        url: url,
+	           	data: $("#purchaseGameForm").serialize(), // serializes the form's elements.
+	           	success:function(data)
+	           	{    
+				var arr = JSON.parse( data );
+				//alert(data);		
+	                	if(arr[0].status=='success'){
+                        		$('#purchaseSuccess').show();
+					$('#purchaseSuccess').fadeOut(5000); 
+					document.purchase_game.reset();       
+                		}else{
+                        		$('#purchaseError').show();  
+					$('#purchaseError').fadeOut(5000);  
+					document.purchase_game.reset();          
+                		}
+           		}
+		});
+		e.preventDefault(); // avoid to execute the actual submit of the form.
+	});
+
+</script>
 
 
 <?php
