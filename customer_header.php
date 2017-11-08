@@ -1,9 +1,10 @@
 <?php
 	session_start();
-	if(!isset($_SESSION['admin_username'])){
+	if(!isset($_SESSION['cus_username'])){
 		header('location:http://people.aero.und.edu/~spokharel/513/1/'); 
 	}else{
-		$user = $_SESSION['admin_username'];
+		$user = $_SESSION['cus_username'];
+		$userId = $_SESSION['cus_userid'];
 	}
 
 ?>
@@ -13,7 +14,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Gamestore | Admin</title>
+  <title>Gamestore | Customer</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -31,7 +32,7 @@
 		<div class="row">
 			<div class="col-sm-3"style="font-size:25px; margin-top:10px;">    			
 				<a href="http://people.aero.und.edu/~spokharel/513/1/listGame.php" class="logo">
-      					<span class="logo-lg"><b>Gamestore </b> Admin</span>
+      					<span class="logo-lg"><b>Gamestore </b> Customer</span>
     				</a>
 			</div>
 			<div class="col-sm-3 pull-right">
@@ -39,51 +40,20 @@
 					<ul class="nav navbar-nav">
 						<li class="dropdown user user-menu">
 							<a href="http://people.aero.und.edu/~spokharel/513/1/listGame.php">
-								<span class="hidden-xs">Welcome  <?php  echo ucfirst($user);?></span>
+								<span class="hidden-xs ">Welcome  <?php  echo ucfirst($user);?></span>
 							</a>
 						</li>
 						<li class="dropdown user user-menu">
 							<a href="logout.php">
-								<span class="hidden-xs">Logout</span>
+								<span class="hidden-xs btn btn-danger btn-block btn-flat">Logout</span>
 							</a>
 						</li>
+
 					</ul>
 				</nav>
 			</div>
   		</div>
 		
-		<div class="row "style="font-size:18px;">
-			<div class="row">
-				<div class="col-xs-1"></div>  
-				<div class="col-xs-2">   
-					 <a href="listGame.php">
-                				</i> <span>List All Games</span>
-					</a>
-				</div> 
-				<div class="col-xs-2">   
-					 <a href="enterGame.php">
-                				<span>Enter games</span>
-					</a>
-				</div>
-				<div class="col-xs-2">   
-					<a href="updatePrice.php">
-                				<span class="menu">Update Game Price</span> 
-					</a>
-				</div>
-				<div class="col-xs-2">   
-					<a href="deleteDeveloper.php">
-                				<span>Delete Developer</span>
-					</a>
-				</div>
-				<div class="col-xs-3">   
-					<a href="cusDetails.php">
-                				<span>Customer Details</span>
-					</a>
-				</div>
-				
-				
-			</div>
-	  
-		</div>
+		
 	  
 	
