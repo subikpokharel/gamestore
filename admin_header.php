@@ -76,7 +76,7 @@
 					</a>
 				</div>
 				<div class="col-xs-3">   
-					<a href="cusDetails.php">
+					<a href="customers.php">
                 				<span>Customer Details</span>
 					</a>
 				</div>

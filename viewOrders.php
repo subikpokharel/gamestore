@@ -12,9 +12,9 @@
 <div id="box-body">
 	<input type="hidden" id="userId"  value="<?php echo $userId; ?>">
 	<table class="table table-bordered table-hover dataTable pull-center" id ="game_table">
-	<div class=" box-footer"><label> <div class="btn bg-navy btn-flat disabled " id="amount-spent"></div></label>
+	<div class=" box-footer"><label> <div class="btn bg-navy btn-flat disabled " id="amount-spent"></div></label></div>
 				   
-	</div>
+	
 	
 </div>
 

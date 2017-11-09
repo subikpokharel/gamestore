@@ -48,7 +48,7 @@
 			"<th>Quantity</th></tr>";
 		for ( i = 0; i < arr.length; i++ ) {
 			out += "<tr><td>" + (i+1) + 
-			"</td><td>" + "<a href ='test.php?asin="+arr[i].ASIN+"&action=viewGame'><span><strong>"+ arr[i].TITLE +"</strong></span></a>"+
+			"</td><td>" + "<a href ='viewTitle.php?asin="+arr[i].ASIN+"&action=viewGame'><span><strong>"+ arr[i].TITLE +"</strong></span></a>"+
 			"</td><td>" + arr[i].Price +
 			"</td><td>" + "<input type='checkbox' class='checkbox' name='purchaseAsin[]' value='"+arr[i].ASIN +"'/"+">" +
 			"</td><td>" + "<input type=number min='0.00' class='field' name='quantity[]' value='0'/"+">"+ 
