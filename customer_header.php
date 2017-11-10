@@ -40,7 +40,7 @@
 					<ul class="nav navbar-nav">
 						<li class="dropdown user user-menu">
 							<a href="http://people.aero.und.edu/~spokharel/513/1/dashboard.php">
-								<span class="hidden-xs ">Welcome  <?php  echo ucfirst($user);?></span>
+								<span class="hidden-sm ">Welcome  <?php  echo ucfirst($user);?></span>
 							</a>
 						</li>
 						<li class="dropdown user user-menu">
