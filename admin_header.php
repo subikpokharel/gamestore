@@ -34,6 +34,7 @@
       					<span class="logo-lg"><b>Gamestore </b> Admin</span>
     				</a>
 			</div>
+			
 			<div class="col-sm-3 pull-right">
 				<nav class="navbar navbar-static-top pull-right">
 					<ul class="nav navbar-nav">

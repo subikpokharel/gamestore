@@ -1,8 +1,28 @@
 <?php	
 	require_once('admin_header.php');	
-	//print_r($_GET);
+	
 ?>
-<br/><br/><br/>
+<br/>
+
+<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a target="_blank" href="https://github.com/subikpokharel/gamestore/blob/master/customers.php">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View HTML Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Java Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Perl Source</span>
+		</a>
+	</div>
+</div>
+<br/>
 <!-- This is game list page.-->
 <div class="box-header with-border">
               <h2 class="box-title"><strong>List of Customers using the System</strong></h2>
@@ -10,7 +30,7 @@
 <br/>
 <div id="box-body">
 	<div class="row">
-		<table class="table table-bordered table-hover dataTable pull-center" id ="customer_table">
+		<table class="table table-bordered table-hover dataTable pull-center" id ="customer_table"></table>
 
 	</div>
 </div>
@@ -38,8 +58,7 @@
 			out += "<tr><td>" + (i+1) + 
 			"</td><td>"+ arr[i].NAME +
 			"</td><td>" + "<a href ='cusDetails.php?id="+arr[i].ID+"&action=viewOrder'><span><strong>"+ arr[i].USERNAME +"</strong></span></a>" +
-			"</td><td>"; //+ arr[i].Price +"</td><td>";
-			//alert(arr[i].Game_Details);
+			"</td><td>"; 
 			var el = arr[i].Game;
 			//alert(el[0].ASIN);
 			var tmp = "";
@@ -57,7 +76,6 @@
 			out +=  arr[i].AMOUNT + 
 			"</td></tr>";
 		}
-		out += "</table>"
 		document.getElementById( "customer_table" ).innerHTML = out;
 	}
 </script>

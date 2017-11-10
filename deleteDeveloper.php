@@ -1,10 +1,28 @@
 <?php	
 	require_once('admin_header.php');
-	//action="http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Add.cgi"
 ?>
 
 
+<br/>
 
+<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a target="_blank" href="https://github.com/subikpokharel/gamestore/blob/master/deleteDeveloper.php">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View HTML Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Java Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Perl Source</span>
+		</a>
+	</div>
+</div>
 <br/>
 <!-- This is game list page.-->
 <div class="box-header with-border">
@@ -54,7 +72,6 @@
 			"</td></tr>";
 		}
 		out += "</table>"
-		//<a href ='viewDeveloper.php?id="+el[i].Developer_ID+"&action=viewDeveloper'><span><strong>"+ el[i].Developer_Name +"</strong></span></a><br>
 		document.getElementById( "developer_table" ).innerHTML = out;
 	}
 

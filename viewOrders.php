@@ -2,7 +2,24 @@
 
 	require_once('customer_header.php');
 ?>
-
+<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a target="_blank" href="https://github.com/subikpokharel/gamestore/blob/master/viewOrders.php">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View HTML Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Java Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Perl Source</span>
+		</a>
+	</div>
+</div>
 <br/>
 <!-- This is game list page.-->
 <div class="box-header with-border">

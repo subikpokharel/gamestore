@@ -1,8 +1,27 @@
 <?php	
 	require_once('admin_header.php');	
-	//print_r($_GET);
 ?>
+<br/>
 
+<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a target="_blank" href="https://github.com/subikpokharel/gamestore/blob/master/viewDeveloper.php">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View HTML Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Java Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Perl Source</span>
+		</a>
+	</div>
+</div>
+<br/>
 <br/>
 <div class="box-header with-border">
               <h2 class="box-title"><strong>Developer Details</strong></h2>
@@ -15,9 +34,12 @@
 			<form class="form-horizontal" method="post">
 				<input type="hidden" id="DEVELOPER"  value="<?php echo($_GET['id']); ?>">
 				<input type="hidden" id="ACTION" value="<?php echo($_GET['action']); ?>">
-				<div class="form-group"> <label>Developer Id:</label><div id="name-id"></div></div>
-			 	<div class="form-group"><label>Developer Name </label><div id="name-name"></div></div>
-				<div class="form-group"><label>Developed Games </label><div id="name-game"></div></div>
+				<div id="box-body">
+					<div class="row">
+						<table class="table borderless table-hover dataTable pull-center" id ="developer_table"></table>
+
+					</div>
+				</div>
 			 </form> 
 		    </div>
 		<div class="col-sm-3"></div>
@@ -41,18 +63,21 @@
 	xmlhttp.send( );
 	function myFunction( response ) {
 		var arr = JSON.parse( response );
-		document.getElementById('name-id').innerHTML =arr[0].ID;
-		document.getElementById('name-name').innerHTML=arr[0].Name;
-		var el = arr[0].Games;
-		var out = "";
-		//alert(el.length);
-		//alert(el[0].GameAsin);
-		//alert(el[0].GameName);
-		for ( i = 0; i < el.length; i++ ) {
-			out += "Game "+(i+1)+": <a href ='viewGame.php?asin="+el[i].GameAsin+"&action=viewGame'><span><strong>"+ el[i].GameName +"</strong></span></a><br>" +"";
-		}
-		document.getElementById('name-game').innerHTML=out;
 
+		var out  = "<tr><th>Developer Id</th>" +
+			"<th>Developer Name</th>" +
+			"<th>Developed Games</th></tr>";
+		out += "<tr><td>" + arr[0].ID + 
+			"</td><td>"+arr[0].Name +
+			"</td><td>";
+		var el = arr[0].Games;
+		var tmp = "";
+		for ( i = 0; i < el.length; i++ ) {
+			tmp += "Game "+(i+1)+": <a href ='viewGame.php?asin="+el[i].GameAsin+"&action=viewGame'><span><strong>"+ el[i].GameName +"</strong></span></a><br>" +"";
+		}
+		out += tmp+"</td><tr>";
+
+		document.getElementById( "developer_table" ).innerHTML = out;
 	}
 
 </script>

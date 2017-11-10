@@ -1,9 +1,26 @@
 <?php
 
 	require_once('customer_header.php');
-	//print_r($_POST);
 ?>
-
+<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a target="_blank" href="https://github.com/subikpokharel/gamestore/blob/master/dashboard.php">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View HTML Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Java Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Perl Source</span>
+		</a>
+	</div>
+</div>
+<br/>
 <br/>
 
 <div class = "row">
@@ -48,6 +65,7 @@
 	</form>
 </div>
 
+
 <script type="text/javascript">
 $("#Search_Bar").submit(function(e) {
 		var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Search.cgi";
@@ -84,39 +102,6 @@ $("#Search_Bar").submit(function(e) {
 	});
 
 </script>
-
-<script>/*
-	var xmlhttp = new XMLHttpRequest( );
-	var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Search.cgi";
-	xmlhttp.onreadystatechange = function( ) {
-		if ( xmlhttp.readyState == 4 && xmlhttp.status == 200 ) {
-			myFunction( xmlhttp.responseText );
-			//alert(xmlhttp.responseText);
-		}
-	}
-	xmlhttp.open( "GET", url, true );
-	xmlhttp.send( );
-	function myFunction( response ) {
-		var arr = JSON.parse( response );
-		var i,j;
-		var out  = "<tr><th>Sl.No</th>" +
-			"<th>Title</th>" +
-			"<th>Price</th>" +
-			"<th>Purchase Game</th>" +
-			"<th>Quantity</th></tr>";
-		for ( i = 0; i < arr.length; i++ ) {
-			out += "<tr><td>" + (i+1) + 
-			"</td><td>" + "<a href ='viewTitle.php?asin="+arr[i].ASIN+"&action=viewGame'><span><strong>"+ arr[i].TITLE +"</strong></span></a>"+
-			"</td><td>" + arr[i].Price +
-			"</td><td>" + "<input type='checkbox' class='checkbox' name='purchaseAsin[]' value='"+arr[i].ASIN +"'/"+">" +
-			"</td><td>" + "<input type=number min='0.00' class='field' name='quantity[]' value='0'/"+">"+ 
-			"</td></tr>";
-		}
-		out += "</table>"
-		document.getElementById( "game_table" ).innerHTML = out;
-	}*/
-</script>
-
 <script type="text/javascript">
 $("#purchaseGameForm").submit(function(e) {
 		var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Customer.cgi";
@@ -143,7 +128,6 @@ $("#purchaseGameForm").submit(function(e) {
 	});
 
 </script>
-
 
 <?php
 

@@ -2,7 +2,26 @@
 
 	require_once('admin_header.php');
 ?>
+<br/>
 
+<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a target="_blank" href="https://github.com/subikpokharel/gamestore/blob/master/cusDetails.php">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View HTML Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Java Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Perl Source</span>
+		</a>
+	</div>
+</div>
 <br/>
 <!-- This is game list page.-->
 <div class="box-header with-border">
@@ -45,7 +64,6 @@
 			"</td><td>" + arr[i].Quantity +
 			"</td></tr>";
 		}
-		//out += "</table>"
 		document.getElementById( "game_table" ).innerHTML = out;
 		var nam = "Customer Name :  "+arr[0].Name;
 		document.getElementById( "cus-name" ).innerHTML = nam;
@@ -53,7 +71,6 @@
 		document.getElementById( "amount-spent" ).innerHTML = amt;
 		$('#cus-name').show();
 		$('#amount-spent').show();
-		//alert(arr[0].Amount);
 	}
 </script>
 <?php

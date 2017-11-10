@@ -1,8 +1,26 @@
 <?php	
-	require_once('admin_header.php');	
-	//print_r($_GET);
+	require_once('admin_header.php');
 ?>
+<br/>
 
+<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a target="_blank" href="https://github.com/subikpokharel/gamestore/blob/master/viewGame.php">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View HTML Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Java Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Perl Source</span>
+		</a>
+	</div>
+</div>
 <br/>
 <div class="box-header with-border">
               <h2 class="box-title"><strong>Game Details</strong></h2>
@@ -10,23 +28,18 @@
 <br/>
 <div id="box-body">
 	<div class="row">
-		<div class="col-sm-1"></div>
+		<div class="col-sm-2"></div>
 		<div class="col-sm-8">
 			<form class="form-horizontal" method="get" action="http://people.aero.und.edu/~spokharel/513/1/addDeveloper.php">
 				<input type="hidden" id="ASIN"  value="<?php echo($_GET['asin']); ?>">
 				<input type="hidden" id="ACTION" value="<?php echo($_GET['action']); ?>">
-				<div class="form-group"> <label>ASIN </label>
-					<div id="name-asin"></div>
-			 	</div>
-			 	<div class="form-group"><label>Title</label>
-				 	<div id="name-title"></div>
-			 	</div>
-			 	<div class="form-group"><label>Price</label>
-					<div id="name-price"></div>
-			 	</div>
-				<div class="form-group"><label>Developers</label>
-					<div id="name-developer"></div>		   
-			 	</div>
+				<div id="box-body">
+					<div class="row">
+						<table class="table borderless table-hover dataTable pull-center" id ="game_table"></table>
+
+					</div>
+				</div>
+
 				<input type="hidden" class="form-control" name = "asin" value="<?php echo($_GET['asin']); ?>">
 				<input type="hidden" class="form-control" name = "action" value="addDeveloper">
 				<div class="box-footer pull-right with-border">
@@ -36,13 +49,12 @@
 			
 			 </form> 
 		    </div>
-		<div class="col-sm-3"></div>
+		<div class="col-sm-2"></div>
 
 	</div>
 </div>
 
 <script>
-	//<a href='addDeveloper.php?asin="+arr[i].ASIN+"&action=addDeveloper' class='btn btn-primary'>Add Developers</a>"
 	var ASIN = document.getElementById('ASIN').value;
 	var action = document.getElementById('ACTION').value;
 	var xmlhttp = new XMLHttpRequest( );
@@ -57,22 +69,28 @@
 	xmlhttp.send( );
 	function myFunction( response ) {
 		var arr = JSON.parse( response );
-		document.getElementById('name-asin').innerHTML =arr[0].ASIN;
-		document.getElementById('name-title').innerHTML=arr[0].TITLE;
-		document.getElementById('name-price').innerHTML=arr[0].Price;
+		var out  = "<tr><th>Game Asin</th>" +
+			"<th>Title</th>" +
+			"<th>Price</th>" +
+			"<th>List of Developers</th></tr>";
+		out += "<tr><td>" + arr[0].ASIN + 
+			"</td><td>"+arr[0].TITLE +
+			"</td><td>"+arr[0].Price +
+			"</td><td>";
 		var el = arr[0].Developers;
-		var out = "";
+		var tmp = "";
 		for ( i = 0; i < el.length; i++ ) {
-			out += "Developer "+(i+1)+": <a href ='viewDeveloper.php?id="+el[i].Developer_ID+"&action=viewDeveloper'><span><strong>"+ el[i].Developer_Name +"</strong></span></a><br>" +"";
+			tmp += "Developer "+(i+1)+": <a href ='viewDeveloper.php?id="+el[i].Developer_ID+"&action=viewDeveloper'><span><strong>"+ el[i].Developer_Name +"</strong></span></a><br>" +"";
 		}
-		document.getElementById('name-developer').innerHTML=out;
+		out += tmp+"</td><tr>";
+
+		document.getElementById( "game_table" ).innerHTML = out;
 
 	}
 
 </script>
 <?php
 	require_once('footer.php');
-	//<input type="hidden" name="action" value="addDeveloper">
 ?>
 
 

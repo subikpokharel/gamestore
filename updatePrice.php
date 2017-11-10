@@ -1,9 +1,29 @@
 <?php	
 	require_once('admin_header.php');
-	//print_r($_POST);
 ?>
 
-<br/><br/>
+<br/>
+
+<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a target="_blank" href="https://github.com/subikpokharel/gamestore/blob/master/updatePrice.php">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View HTML Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Java Source</span>
+		</a>
+	</div>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Perl Source</span>
+		</a>
+	</div>
+</div>
+
+<br/>
 <div class="box-header with-border">
               <h2 class="box-title"><strong>List of Games Table</strong></h2>
 </div>
@@ -21,7 +41,7 @@
 	</div>
 	<div id="box-body">
 		<div class="row">
-			<table class="table table-bordered table-hover dataTable pull-center" id ="update_table">
+			<table class="table table-bordered table-hover dataTable pull-center" id ="update_table"></table>
 
 		</div>
 	</div>
@@ -52,7 +72,6 @@
 			"</td><td>" +"<input type=number min='0.00'step='0.01' name='prices[]' value="+arr[i].Price+">" +"<input type=hidden name='asins[]' value="+arr[i].ASIN+">" +
 			"</td></tr>";
 		}
-		out += "</table>"
 		document.getElementById( "update_table" ).innerHTML = out;
 	}
 
@@ -71,7 +90,6 @@
 				var arr = JSON.parse( data );	
 				//alert(arr[0].status);	
 	                	if(arr[0].status=='success'){
-					//alert(arr[0].status);
 					location.href = 'http://people.aero.und.edu/~spokharel/513/1/listGame.php';    
                         		     
                 		}else{
@@ -88,8 +106,5 @@
 
 <?php
 	require_once('footer.php');
-	//<input type="text" class="form-control" id="gameTitle" name = "title"  placeholder="Enter the Game Title" required>
-	//<input type="number" min="0.00" step="0.01" class="form-control" name = "price" id="gamePrice" placeholder="Enter the Price for the Game" required>
-	//  
 ?>
 

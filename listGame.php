@@ -4,7 +4,32 @@
 ?>
 
 
-<br/><br/><br/>
+<br/>
+
+<div class="row">
+	<div class="col-sm-2"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-danger btn-block btn-flat">Reset The System</span>
+		</a>
+	</div><div class="col-sm-2"></div>
+	<div class="col-sm-2"style="margin-top:10px;">    			
+		<a target="_blank" href="https://github.com/subikpokharel/gamestore/blob/master/listGame.php">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View HTML Source</span>
+		</a>
+	</div>
+	<div class="col-sm-2"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Java Source</span>
+		</a>
+	</div>
+	<div class="col-sm-2"style="margin-top:10px;">    			
+		<a href="">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View Perl Source</span>
+		</a>
+	</div>
+</div>
+
+<br/>
 <!-- This is game list page.-->
 <div class="box-header with-border">
               <h2 class="box-title"><strong>List of Games Table</strong></h2>
@@ -12,7 +37,7 @@
 <br/>
 <div id="box-body">
 	<div class="row">
-		<table class="table table-bordered table-hover dataTable pull-center" id ="game_table">
+		<table class="table table-bordered table-hover dataTable pull-center" id ="game_table"> </table>
 
 	</div>
 </div>
@@ -51,7 +76,7 @@
 			out += "</td><td>" + "<a href='addDeveloper.php?asin="+arr[i].ASIN+"&action=addDeveloper' class='btn btn-primary'>Add Developers</a>"+ 
 			"</td></tr>";
 		}
-		out += "</table>"
+		//out += "</table>"
 		document.getElementById( "game_table" ).innerHTML = out;
 	}
 </script>
@@ -59,5 +84,4 @@
 
 <?php
 	require_once('footer.php');
-	//"</td><td>" + "<a href ='test.php/"+arr[i].Developer_ID+"/?action=view_developer'><span>"+ arr[i].Developer_Name +"</span></a>" +
 ?>
