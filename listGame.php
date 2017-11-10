@@ -11,20 +11,15 @@
 		<a href="">
 			<span class="hidden-xs btn btn-danger btn-block btn-flat">Reset The System</span>
 		</a>
-	</div><div class="col-sm-2"></div>
+	</div><div class="col-sm-3"></div>
 	<div class="col-sm-2"style="margin-top:10px;">    			
 		<a target="_blank" href="https://github.com/subikpokharel/gamestore/blob/master/listGame.php">
 			<span class="hidden-xs btn btn-default btn-block btn-flat">View HTML Source</span>
 		</a>
 	</div>
-	<div class="col-sm-2"style="margin-top:10px;">    			
-		<a href="">
-			<span class="hidden-xs btn btn-default btn-block btn-flat">View Java Source</span>
-		</a>
-	</div>
-	<div class="col-sm-2"style="margin-top:10px;">    			
-		<a href="">
-			<span class="hidden-xs btn btn-default btn-block btn-flat">View Perl Source</span>
+	<div class="col-sm-3"style="margin-top:10px;">    			
+		<a target="_blank" href="http://people.aero.und.edu/~spokharel/cgi-bin/513/1/viewSource.pl?interface=listGame">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View CGI/Perl/JAVA Source</span>
 		</a>
 	</div>
 </div>
@@ -43,7 +38,7 @@
 </div>
 <script>
 	var xmlhttp = new XMLHttpRequest( );
-	var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/ListGame.cgi";
+	var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Listing.cgi?action=list_game";
 	xmlhttp.onreadystatechange = function( ) {
 		if ( xmlhttp.readyState == 4 && xmlhttp.status == 200 ) {
 			myFunction( xmlhttp.responseText );

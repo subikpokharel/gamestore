@@ -6,20 +6,14 @@
 <br/>
 
 <div class="row">
-	<div class="col-sm-1"></div>
-	<div class="col-sm-3"style="margin-top:10px;">    			
+	<div class="col-sm-3 pull-left"style="margin-top:10px;">    			
 		<a target="_blank" href="https://github.com/subikpokharel/gamestore/blob/master/deleteDeveloper.php">
 			<span class="hidden-xs btn btn-default btn-block btn-flat">View HTML Source</span>
 		</a>
 	</div>
-	<div class="col-sm-3"style="margin-top:10px;">    			
-		<a href="">
-			<span class="hidden-xs btn btn-default btn-block btn-flat">View Java Source</span>
-		</a>
-	</div>
-	<div class="col-sm-3"style="margin-top:10px;">    			
-		<a href="">
-			<span class="hidden-xs btn btn-default btn-block btn-flat">View Perl Source</span>
+	<div class="col-sm-3 pull-right"style="margin-top:10px;">    			
+		<a target="_blank" href="http://people.aero.und.edu/~spokharel/cgi-bin/513/1/viewSource.pl?interface=deleteDeveloper">
+			<span class="hidden-xs btn btn-default btn-block btn-flat">View CGI/Perl/JAVA Source</span>
 		</a>
 	</div>
 </div>
@@ -48,7 +42,7 @@
 <script type="text/javascript">
 
 	var xmlhttp = new XMLHttpRequest( );
-	var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/List.cgi";
+	var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Listing.cgi?action=list_dev";
 	xmlhttp.onreadystatechange = function( ) {
 		if ( xmlhttp.readyState == 4 && xmlhttp.status == 200 ) {
 			myFunction( xmlhttp.responseText );
@@ -59,6 +53,7 @@
 	xmlhttp.send( );
 	function myFunction( response ) {
 		var arr = JSON.parse( response );
+		//alert(response);
 		var i;
 		var out  = "<tr><th>Sl.No</th>" +
 			"<th>Developers Id</th>" +
