@@ -1,23 +1,22 @@
 <?php	
 	require_once('admin_header.php');
-	
 ?>
 
 
 <br/>
 
 <div class="row">
-	<div class="col-sm-2"style="margin-top:10px;">    			
-		<a href="">
-			<span class="hidden-xs btn btn-danger btn-block btn-flat">Reset The System</span>
-		</a>
-	</div><div class="col-sm-3"></div>
+	<div class="col-sm-2 pull-left"style="margin-top:10px;"> 
+		<form role="form" method="get" id="resetForm">
+		<button type="submit" class="btn btn-danger btn-block btn-flat">Reset The System</button>			
+		
+	</div><div class="col-sm-5"></div>
 	<div class="col-sm-2"style="margin-top:10px;">    			
 		<a target="_blank" href="https://github.com/subikpokharel/gamestore/blob/master/listGame.php">
 			<span class="hidden-xs btn btn-default btn-block btn-flat">View HTML Source</span>
 		</a>
 	</div>
-	<div class="col-sm-3"style="margin-top:10px;">    			
+	<div class="col-sm-3 pull-right"style="margin-top:10px;">    			
 		<a target="_blank" href="http://people.aero.und.edu/~spokharel/cgi-bin/513/1/viewSource.pl?interface=listGame">
 			<span class="hidden-xs btn btn-default btn-block btn-flat">View CGI/Perl/JAVA Source</span>
 		</a>
@@ -75,7 +74,26 @@
 		document.getElementById( "game_table" ).innerHTML = out;
 	}
 </script>
+<script type="text/javascript">
 
+	$("#resetForm").submit(function(e) {
+		var url = "http://people.aero.und.edu/~spokharel/cgi-bin/513/1/Listing.cgi?action=reset_database";
+		$.ajax({
+			type: "GET",
+		        url: url,
+	           	data: $("#insertGameForm").serialize(), // serializes the form's elements.
+	           	success:function(data)
+	           	{    
+				var arr = JSON.parse( data );		
+	                	if(arr[0].status=='success'){
+                        		window.location.reload(true); 
+                		}
+           		}
+		});
+		e.preventDefault(); // avoid to execute the actual submit of the form.
+	});
+
+</script>
 
 <?php
 	require_once('footer.php');
