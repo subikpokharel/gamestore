@@ -3,6 +3,7 @@
 Database-driven web sites are a must for companies nowadays. This project is focused on designing and implementation of a simple database-driven online gamestore by using Oracle 12c, an object-relational database, from the ground up. 
 
 The gamestore includes the following features:
+
   The data of a game includes
     a unique ASIN (10 characters),
     a title,
